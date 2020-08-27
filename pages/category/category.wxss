@@ -1,0 +1,12 @@
+/* pages/category/category.wxss */
+/* 左侧菜单 */
+.leftMenuView{
+  float: left;
+  width: 25%;
+  background: #ccc;
+}
+.rightContentView{
+  float: right;
+  width: 75%;
+  background: red;
+}

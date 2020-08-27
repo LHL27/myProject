@@ -1,0 +1,134 @@
+/**index.wxss**/
+/* 头部 */
+.header{
+  padding: 0rpx 5% 10rpx 5%;
+}
+/* 标题 */
+.header .my_title{
+  font-size: 50rpx;
+  font-weight: bold;
+}
+/* 搜索框 */
+.searchView{
+  float: right;
+  margin-top: 5rpx;
+}
+#searchInput{
+  border: 1px solid #ccc;
+  height: 50rpx;
+  float: left;
+}
+.searchImg{
+  height: 50rpx;
+  width: 50rpx;
+  margin-left: 20rpx;
+  float: left;
+}
+/* 轮播图 */
+.my_Swiper{
+  width: 100%;
+}
+.prev_Swiper{
+  width: 100%;
+  text-align: center;
+}
+.swiper_image{
+  width: 90%;
+  height: 100%;
+  border-radius: 5%;
+}
+
+/* 导航栏 */
+.myBar{
+  padding:  30rpx 5%;
+}
+.scroll-view_H{
+  width: 100%;
+  white-space: nowrap;
+  /* background: #ccc; */
+}
+.scroll-view-item_H{
+  width: 16%;
+  margin: 0% 2%;
+  font-size: 25rpx;
+  line-height: 50rpx;
+  display: inline-block;
+  text-align: center;
+}
+.scroll-view-item_active{
+  color: green;
+  border-bottom: 2rpx solid green;
+}
+
+/* 商品展示 */
+.goodsesView{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0% 5%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 48%);
+  grid-row-gap: 40rpx;
+  grid-column-gap: 4%; 
+  /* background: #ccc; */
+}
+.goodsesView .goodsView{
+  box-sizing: border-box;
+  position: relative;
+}
+.views{
+  position: absolute;
+  top:0rpx;
+  right:0rpx;
+  background: #ccc;
+  border-radius: 50%;
+  opacity: 0.7;
+}
+.goodsImg{
+  width: 100%;
+  display: block;
+  border-radius: 10%;
+}
+.goodsTitle{
+  font-weight: bold;
+}
+.priView{
+  float: left;
+}
+.priImg{
+  width: 28rpx;
+  height: 28rpx;
+}
+/* 价格 */
+.minPri,.maxPri{
+  font-size: 25rpx;
+  line-height: 28rpx;
+}
+/* 地址 */
+.AddrView{
+  float: right;
+}
+
+/* 隐藏搜索框 */
+.hideSearchView{
+  position: fixed;
+  top: 0rpx;
+  left: 750rpx;
+  background: green;
+  overflow: hidden;
+  width: 100%;
+  z-index: 2;
+  padding: 20rpx 5%;
+}
+.hideSearchInput{
+  border: 1px solid #ccc;
+  border-radius: 5%;
+  width: 80%;
+  float: left;
+  background: white;
+}
+.hideSearchImg{
+  float: rigt;
+  height: 50rpx;
+  width: 50rpx;
+  margin-left: 20rpx;
+}

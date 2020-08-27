@@ -1,0 +1,32 @@
+<!--pages/rlease/rlease.wxml-->
+<view class="container">
+  <view class="selectImageView">
+    <view class="selectImage" bindtap="selectImage">
+      <image src="../../image/xiangji1fill.png" class="addImage"></image>
+    </view>
+    <view wx:if="{{tempFilePaths!=''}}" class="showImages">
+      <view wx:for="{{tempFilePaths}}" wx:key="*this" class="showImageItem">
+        <image src="{{item}}" class="showImageImg"></image>
+        <image src="../../image/guanbi2fill.png" data-index="{{index}}" class="delImg" bindtap="delImg"></image>
+      </view>
+    </view>
+  </view>
+  <input class="babyTitle" placeholder="请输入宝贝标题"></input>
+  <textarea class="babyDescription" placeholder="描述"></textarea>
+  <view class="coordinateGroup">
+    <view class="coordinateView">
+      <image class="coordinateImage" src="../../image/zuobiaofill.png"></image>
+    </view>
+    <input class="coordinateInput"></input>
+  </view>
+  <view class="priceGroup">
+    <view class="priceView">价格</view>
+    <input class="priceInput" placeholder="建议 100"></input>
+  </view>
+  <view class="categoryGroup">
+    <view class="categoryView">类别</view>
+    <input class="categoryInput"></input>
+  </view>
+  <button type="primary" class="releaseBtn">发布</button>
+</view>
+<button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>

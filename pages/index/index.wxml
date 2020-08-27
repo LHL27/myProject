@@ -1,0 +1,101 @@
+<!--index.wxml-->
+  <!-- 头部 -->
+  <view class="header">
+    <text class="my_title">数通享</text>
+    <view class="searchView">
+      <input type="text" placeholder="请输入搜索词" id="searchInput" bindinput="searchInput"></input>
+      <image class="searchImg" src="../../image/sousuo.png" bindtap="searchCheck"></image>
+    </view>
+  </view>
+  <!-- 轮播图 -->
+  <view class="my_Swiper">
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="prev_Swiper">
+        <block wx:for="{{swiperURL}}" wx:key="*this">
+          <swiper-item>
+            <image src="{{item}}" class="swiper_image"></image>
+          </swiper-item>
+        </block>
+      </swiper>
+  </view>
+  <!-- 导航栏 -->
+  <view class="myBar">
+    <scroll-view class="scroll-view_H" scroll-x="true">
+      <view class="scroll-view-item_H {{activeType===index?'scroll-view-item_active':''}}" data-type="{{index}}" wx:for="{{typeData}}" wx:key="*this" bindtap="barItemCheck">
+        {{item}}
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 商品展示 -->
+  <view class="goodsesView">
+    <view class="goodsView">
+      <view class="views">123</view>
+      <image src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=62307225,524474136&fm=11&gp=0.jpg" class="goodsImg" mode="widthFix"></image>
+      <text class="goodsTitle">肌肤的风口浪尖的</text>
+      <view class="priView">
+        <image class="priImg" src="../../image/icon_01.png"></image>
+        <text class="minPri">64</text> - 
+        <text class="maxPri">75</text>
+      </view>
+      <view class="AddrView">
+        中国广州市
+      </view>
+    </view>
+    <view class="goodsView">
+      <view class="views">123</view>
+      <image src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=62307225,524474136&fm=11&gp=0.jpg" class="goodsImg" mode="widthFix"></image>
+      <text class="goodsTitle">肌肤的风口浪尖的</text>
+      <view class="priView">
+        <image class="priImg" src="../../image/icon_01.png"></image>
+        <text class="minPri">64</text> - 
+        <text class="maxPri">75</text>
+      </view>
+      <view class="AddrView">
+        广州市
+      </view>
+    </view>
+    <view class="goodsView">
+      <view class="views">123</view>
+      <image src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=62307225,524474136&fm=11&gp=0.jpg" class="goodsImg" mode="widthFix"></image>
+      <text class="goodsTitle">肌肤的风口浪尖的</text>
+      <view class="priView">
+        <image class="priImg" src="../../image/icon_01.png"></image>
+        <text class="minPri">64</text> - 
+        <text class="maxPri">75</text>
+      </view>
+      <view class="AddrView">
+        中国广州市
+      </view>
+    </view>
+    <view class="goodsView">
+      <view class="views">123</view>
+      <image src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=62307225,524474136&fm=11&gp=0.jpg" class="goodsImg" mode="widthFix"></image>
+      <text class="goodsTitle">肌肤的风口浪尖的</text>
+      <view class="priView">
+        <image class="priImg" src="../../image/icon_01.png"></image>
+        <text class="minPri">64</text> - 
+        <text class="maxPri">75</text>
+      </view>
+      <view class="AddrView">
+        中国广州市
+      </view>
+    </view>
+    <view class="goodsView">
+      <view class="views">123</view>
+      <image src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=62307225,524474136&fm=11&gp=0.jpg" class="goodsImg" mode="widthFix"></image>
+      <text class="goodsTitle">肌肤的风口浪尖的</text>
+      <view class="priView">
+        <image class="priImg" src="../../image/icon_01.png"></image>
+        <text class="minPri">64</text> - 
+        <text class="maxPri">75</text>
+      </view>
+      <view class="AddrView">
+        中国广州市
+      </view>
+    </view>
+  </view>
+
+  <!-- 隐藏搜索框 -->
+  <view class="hideSearchView" style="left:{{hideSearchViewLeft}}">
+    <input type="text" placeholder="请输入搜索词" class="hideSearchInput" bindinput="searchInput"></input>
+    <image class="hideSearchImg" src="../../image/sousuo.png" bindtap="searchCheck"></image>
+  </view>

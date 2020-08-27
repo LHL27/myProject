@@ -1,0 +1,9 @@
+<!--pages/category/category.wxml-->
+<view class="leftMenuView">
+  <scroll-view scroll-y="true" style="height: 300rpx;">
+          <view id="demo1" class="scroll-view-item demo-text-1" wx:for="{{30}}">
+            {{item}}
+          </view>
+        </scroll-view>
+</view>
+<view class="rightContentView">right</view>

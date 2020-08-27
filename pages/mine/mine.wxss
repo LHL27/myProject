@@ -1,0 +1,40 @@
+/* pages/mine/mine.wxss */
+.infoGroup{
+  border: 1rpx solid #ccc;
+  border-radius: 5rpx;
+  padding: 20rpx 0rpx 20rpx 20rpx;
+  overflow: hidden;
+}
+.infoLeft{
+  width: 30%;
+  float: left;
+  font-size: 50rpx;
+  font-weight: bold;
+  line-height: 50rpx;
+  padding: 25rpx 0rpx;
+}
+.infoRight{
+  width:70%;
+  float: right;
+}
+.toRightView{
+  float: right;
+  padding:31rpx 0%;
+}
+.avatarImage{
+  width:100rpx;
+  height: 100rpx;
+  float: right;
+  border-radius: 50%;
+}
+.toRightImage{
+  width: 38rpx;
+  height: 38rpx;
+}
+.myRelease{
+  margin-top: 30rpx;
+  border-bottom: 1rpx solid #ccc;
+  font-size: 30rpx;
+  font-weight: bold;
+  padding: 10rpx;
+}

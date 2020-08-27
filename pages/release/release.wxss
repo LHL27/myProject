@@ -1,0 +1,99 @@
+/* pages/release/release.wxss */
+.container{
+  padding: 5% 5%;
+}
+.selectImageView{
+  width:100%;
+}
+.selectImage{
+  width: 120rpx;
+  height: 120rpx;
+  border: 3rpx solid #ccc;
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+.addImage{
+  width: 60rpx;
+  height: 60rpx;
+}
+/* 显示图片 */
+.showImages{
+  height: 120rpx;
+  width: 100%;
+  margin-top: 30rpx;
+  overflow: hidden;
+}
+.showImageItem{
+  height: 120rpx;
+  width: 120rpx;
+  float: left;
+  margin-right: 30rpx;
+  position: relative;
+}
+.showImageImg{
+  width: 100%;
+  height: 100%;
+  border-radius: 5%;
+}
+.delImg{
+  height: 38rpx;
+  width: 38rpx;
+  position: absolute;
+  top: 0rpx;
+  right: 0rpx;
+  opacity: 0.6;
+}
+
+.babyTitle{
+  margin-top: 30rpx;
+  border-bottom: 2rpx solid #ccc; 
+}
+.babyDescription{
+  border: 1rpx solid #ccc;
+  margin-top: 30rpx;
+  width: 96%;
+  padding: 2%;
+}
+.coordinateGroup{
+  margin-top: 30rpx;
+}
+.coordinateView{
+  width: 10%;
+  display: inline-block;
+}
+.coordinateImage{
+  height: 38rpx;
+  width: 38rpx;
+}
+.coordinateInput{
+  display: inline-block;
+  border-bottom: 1rpx solid #ccc;
+  width: 90%;
+}
+
+/* 价格 */
+.priceGroup,.categoryGroup{
+  margin-top: 20rpx;
+  border-bottom: 1rpx solid #ccc;
+  overflow: hidden;
+  padding: 10rpx 0%;
+}
+.priceView,.categoryView{
+  font-size: 35rpx;
+  font-weight: bolder;
+  width: 20%;
+  float: left;
+  height: 50rpx;
+  box-sizing: border-box;
+  line-height: 50rpx;
+}
+.priceInput,.categoryInput{
+  width: 80%;
+  float: left;
+}
+
+.releaseBtn{
+  width:750rpx;
+  margin-top: 30rpx;
+  display: block;
+}
