@@ -3,7 +3,7 @@
   <view class="header">
     <text class="my_title">数通享</text>
     <view class="searchView">
-      <input type="text" placeholder="请输入搜索词" id="searchInput" bindinput="searchInput"></input>
+      <!-- <input type="text" placeholder="请输入搜索词" id="searchInput" bindinput="searchInput"></input> -->
       <image class="searchImg" src="../../image/sousuo.png" bindtap="searchCheck"></image>
     </view>
   </view>

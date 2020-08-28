@@ -1,32 +1,39 @@
 <!--pages/rlease/rlease.wxml-->
 <view class="container">
   <view class="selectImageView">
+    <!-- 选择图片 -->
     <view class="selectImage" bindtap="selectImage">
       <image src="../../image/xiangji1fill.png" class="addImage"></image>
     </view>
+    <!-- 显示图片 -->
     <view wx:if="{{tempFilePaths!=''}}" class="showImages">
       <view wx:for="{{tempFilePaths}}" wx:key="*this" class="showImageItem">
-        <image src="{{item}}" class="showImageImg"></image>
+        <image src="{{item}}" class="showImageImg" bindtap="showImg" data-index="{{index}}"></image>
         <image src="../../image/guanbi2fill.png" data-index="{{index}}" class="delImg" bindtap="delImg"></image>
       </view>
     </view>
   </view>
   <input class="babyTitle" placeholder="请输入宝贝标题"></input>
   <textarea class="babyDescription" placeholder="描述"></textarea>
+ 
   <view class="coordinateGroup">
-    <view class="coordinateView">
-      <image class="coordinateImage" src="../../image/zuobiaofill.png"></image>
-    </view>
-    <input class="coordinateInput"></input>
+    <view class="coordinateView">地址</view>
+    <input class="coordinateInput" placeholder="请输入地址"></input>
   </view>
   <view class="priceGroup">
     <view class="priceView">价格</view>
-    <input class="priceInput" placeholder="建议 100"></input>
+    <input class="priceInput" placeholder="请输入价格"></input>
   </view>
   <view class="categoryGroup">
     <view class="categoryView">类别</view>
     <input class="categoryInput"></input>
   </view>
-  <button type="primary" class="releaseBtn">发布</button>
+  <button type="primary" class="releaseBtn" bindtap="releaseBtn">发布</button>
 </view>
 <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+
+<!-- 放大图片 -->
+<view wx:if="{{showShield}}" class="shieldView">
+  <image src="{{showImgPath}}" class="showImg"></image>
+  <image src="../../image/guanbi2fill.png" class="closeImg" bindtap="closeImg"></image>
+</view>

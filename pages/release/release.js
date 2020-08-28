@@ -6,13 +6,19 @@ Page({
    * 页面的初始数据
    */
   data: {
+    //用户信息
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     openid: "",
     servicePath:"",
-    // 图片路径
+    //商品
     tempFilePaths:"",
+    imgRes:"",
+    babyTitle:"",
+    //放大图片
+    showShield:false,
+    showImgPath:""
   },
 
   /**
@@ -122,10 +128,12 @@ Page({
         console.log(tempFilePaths);
         this.setData({
           tempFilePaths: res.tempFilePaths,
+          imgRes:res,
         })
       }
     })
   },
+  // 删除图片
   delImg:function(e){
     var index = e.currentTarget.dataset.index;
     this.data.tempFilePaths.splice(index, 1);
@@ -135,5 +143,24 @@ Page({
     console.log(e.currentTarget.dataset.index);
     console.log("删除图片");
     console.log(this.data.tempFilePaths);
+  },
+  //放大图片
+  showImg:function(e){
+    // console.log(e.currentTarget.dataset.index);
+    this.setData({
+      showImgPath: this.data.tempFilePaths[e.currentTarget.dataset.index],
+      showShield: true,
+    })
+  },
+  // 隐藏图片
+  closeImg:function(){
+    this.setData({
+      showShield:false,
+    })
+  },
+  // 点击发布
+  releaseBtn:function(){
+    console.log(this.data.userInfo);
+    console.log(this.data.openid);
   }
 })

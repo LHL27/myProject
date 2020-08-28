@@ -1,10 +1,9 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/mine/mine",
     "pages/release/release",
-    
-    "pages/infor/infor"
+    "pages/infor/infor",
+    "pages/mine/mine"
   ],
   "window":{
     "backgroundTextStyle":"light",

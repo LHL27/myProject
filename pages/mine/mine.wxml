@@ -11,11 +11,57 @@
       <image class="avatarImage" src="{{userInfo.avatarUrl}}"></image>
     </view>
   </view>
-  <view class="myRelease">
+  <view data-index="0" class="myRelease {{showModuleIndex==0?'activeModule':''}}" bindtap="showModule">
     我发布的
+    <image wx:if="{{showModuleIndex!=0}}" src="../../image/xiangxia2.png" class="xiangXiaImg"></image>
+    <image wx:if="{{showModuleIndex==0}}" src="../../image/xiangshang2.png" class="xiangShangImg"></image>
   </view>
-  <view class="myRelease">
+  <view wx:if="{{showModuleIndex==0}}" class="myReleaseView">
+    <view wx:for="{{releaseGoods}}" wx:key="*this" class="releaseGoodsItem">
+      <view class="releaseLeft">
+        <image src="{{item.imgURL[0]}}" class="releaseGoodsImg"></image>
+      </view>
+      <view class="releaseRight">
+        <view>{{item.title}}</view>
+        <view class="priceView">￥{{item.price}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view data-index="1" class="myFavorites {{showModuleIndex==1?'activeModule':''}}" bindtap="showModule">
     我的收藏
+    <image wx:if="{{showModuleIndex!=1}}" src="../../image/xiangxia2.png" class="xiangXiaImg"></image>
+    <image wx:if="{{showModuleIndex==1}}" src="../../image/xiangshang2.png" class="xiangShangImg"></image>
+  </view>
+  <view wx:if="{{showModuleIndex==1}}" class="myFavoritesView">
+    <view wx:for="{{favoritesGoods}}" wx:key="*this" class="favoritesGoodsItem">
+      <view class="favoritesManView">{{item.favoritesMan}}</view>
+      <view class="favoritesLeft">
+        <image src="{{item.imgURL[0]}}" class="favoritesGoodsImg"></image>
+      </view>
+      <view class="favoritesRight">
+        <view>{{item.title}}</view>
+        <view class="priceView">￥{{item.price}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view data-index="2" class="aboutMe {{showModuleIndex==2?'activeModule':''}}" bindtap="showModule">
+    我的信息
+    <image wx:if="{{showModuleIndex!=2}}" src="../../image/xiangxia2.png" class="xiangXiaImg"></image>
+    <image wx:if="{{showModuleIndex==2}}" src="../../image/xiangshang2.png" class="xiangShangImg"></image>
+  </view>
+  <view wx:if="{{showModuleIndex==2}}" class="aboutMeView">
+    <view class="departmentGroup">
+      <view class="departmentView">部门</view>
+      <input disabled="{{disabledChange}}" class="departmentInput" type="text" placeholder="请输入部门" value="{{department}}" bindinput="departmentInput"></input>
+    </view>
+    <view class="realNameGroup">
+      <view class="realNameView">真名</view>
+      <input disabled="{{disabledChange}}" class="realNameInput" type="text" placeholder="请输入真名" value="{{realName}}" bindinput="realNameInput"></input>
+    </view>
+    <button wx:if="{{disabledChange}}" type="primary" size="mini" class="changeAboutMe" bindtap="changeAboutMe">更改</button>
+    <button wx:if="{{!disabledChange}}" type="primary" size="mini" class="saveAboutMe" bindtap="saveAboutMe">保存</button>
   </view>
 </view>
 <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>

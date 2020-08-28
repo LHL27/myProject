@@ -13,11 +13,11 @@
   float: right;
   margin-top: 5rpx;
 }
-#searchInput{
+/* #searchInput{
   border: 1px solid #ccc;
   height: 50rpx;
   float: left;
-}
+} */
 .searchImg{
   height: 50rpx;
   width: 50rpx;

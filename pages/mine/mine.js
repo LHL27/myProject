@@ -6,10 +6,56 @@ Page({
    * 页面的初始数据
    */
   data: {
+    // 用户信息
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     openid: "",
+    department:"企业信息化服务部",
+    realName:"张三",
+    //显示模块
+    showModuleIndex:100,
+
+    //发布的商品
+    releaseGoods:[
+      {
+        goodsId:"g111",
+        title:"好奇的零食",
+        imgURL: ["https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1821555880,3887479267&fm=26&gp=0.jpg"],
+        price:100,
+      },{
+        goodsId: "g112",
+        title: "好吃的零食好吃的零食好吃的零食",
+        imgURL: ["https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=118845459,3792174975&fm=26&gp=0.jpg"],
+        price: 1005,
+      }
+    ],
+
+    // 收藏的商品
+    favoritesGoods: [
+      {
+        favoritesMan:"万五",
+        goodsId: "g111sds",
+        title: "好奇的零食",
+        imgURL: ["https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1821555880,3887479267&fm=26&gp=0.jpg"],
+        price: 100,
+      }, {
+        favoritesMan: "李四",
+        goodsId: "g112",
+        title: "好吃的零食好吃的零食好吃的零食",
+        imgURL: ["https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=118845459,3792174975&fm=26&gp=0.jpg"],
+        price: 1005,
+      }, {
+        favoritesMan: "不知火舞",
+        goodsId: "g114",
+        title: "好吃的零食好吃的零食好吃的零食",
+        imgURL: ["https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=118845459,3792174975&fm=26&gp=0.jpg"],
+        price: 1005,
+      }
+    ],
+
+    //是否可输入
+    disabledChange:true,
   },
 
   /**
@@ -100,5 +146,52 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  //显示或隐藏模块
+  showModule:function(e){
+    // console.log(e.currentTarget.dataset.index);
+    var _this = this;
+    var index = e.currentTarget.dataset.index;
+    if(this.data.showModuleIndex === index){
+      _this.setData({
+        showModuleIndex:100,
+      })
+    }else{
+      _this.setData({
+        showModuleIndex: index,
+      })
+    }
+  },
+  // 点击更改按钮
+  changeAboutMe:function(){
+    this.setData({
+      disabledChange: false,
+    })
+  },
+  // 输入部门
+  departmentInput:function(e){
+    // console.log(e.detail.value);
+    this.setData({
+      department: e.detail.value,
+    })
+  },
+  // 输入真名
+  realNameInput: function (e) {
+    // console.log(e.detail.value);
+    this.setData({
+      realName: e.detail.value,
+    })
+  },
+  //点击保存按钮
+  saveAboutMe:function(){
+    this.setData({
+      disabledChange: true,
+    });
+    var obj = {
+      "openId": app.globalData.openid,
+      "department": this.data.department,
+      "realName": this.data.realName,
+    }
+    console.log(obj);
   }
 })
